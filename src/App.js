@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React with Jiruu
+          Learn React with Jiruu 2nd Edition
         </a>
       </header>
     </div>
