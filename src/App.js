@@ -27,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <header>
+        <SignOut/>
 
       </header>
 
@@ -55,6 +56,8 @@ function SignOut(){
 }
 
 function ChatRoom() {
+  const dummy = useRef();
+
   const messageRef = firestore.collection('messages');
   const query = messageRef.orderBy('createAt').limit(25);
 
@@ -75,6 +78,8 @@ function ChatRoom() {
 
     setFormValue('');
 
+    dummy.current.scrollIntoView({behavior: 'smooth'});
+
   }
 
 
@@ -82,6 +87,8 @@ function ChatRoom() {
     <>
       <div>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg}/>)}
+
+        <div ref={dummy}></div>
         
       </div>
       <form onSubmit={sendMessage}>
@@ -99,7 +106,7 @@ function ChatMessage(props){
 
   return (
     <div className={`message ${messageClass}`}>
-      <img src={photoURL} />
+      <img src={photoURL} alt="..."/>
       <p>{text}</p>
     </div>
   )
