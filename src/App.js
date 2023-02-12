@@ -8,7 +8,7 @@ import 'firebase/compat/auth';
 
 // import {useAuthState} from 'react-firebase-hooks/auth';
 // import {useCollectionData} from 'react-firebase-hooks/firestore'
-import Register from './pages/Login/Register';
+import PgRegister from './pages/Login/PgRegister';
 
 // firebase.initializeApp({
 //   apiKey: "AIzaSyBwW0Bycz6-VHfbNErartsPpBmuqZDoxQE",
@@ -37,7 +37,7 @@ function App() {
     //     {user ? <ChatRoom/> : <SignIn/>}
     //   </section>
     // </div>
-    <Register/>
+    <PgRegister/>
   );
 }
 
